@@ -1,0 +1,177 @@
+/* 
+tạo 1 before dành cho li để thực hiện tạo một thanh màu xanh nằm ngàng trên giao diện 
+*/
+header .navbar-collapse .nav-item {
+    position: relative;
+    margin-right: 20px;
+}
+
+header .navbar-collapse .nav-item::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background-color: green;
+    transition: all 0.5s;
+}
+
+header .navbar-collapse .nav-item:hover::before {
+    width: 100%;
+}
+
+header .navbar-collapse .nav-item:hover a {
+    color: green !important;
+}
+
+header .navbar-collapse .active a {
+    color: green !important;
+}
+
+header .navbar-collapse .active::before {
+    width: 100%;
+}
+
+/* CAROUSEL */
+/* .carousel_text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(39, 43, 54, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} */
+
+.carousel-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(39, 43, 54, 0.5);
+}
+
+.carousel_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    color: white;
+}
+
+.cyber_carousel .carousel_text img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+/* PROJECT */
+.cyber_project {
+    padding: 50px 0;
+}
+
+.cyber_project .cyber_project_title {
+    text-align: center;
+}
+
+.cyber_project .nav-item .active {
+    background-color: green;
+    border-color: green !important;
+    color: white !important;
+}
+
+.cyber_project .project_item .project_text {
+    border: 1px solid transparent;
+    border-radius: 0 0 8px 8px;
+    border-top: none;
+    transition: all 0.5s;
+}
+
+.cyber_project .project_item:hover .project_text {
+    border-color: green;
+}
+
+.vuong {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    animation-name: move;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(300px, 0);
+    }
+
+    50% {
+        transform: translate(300px, 100px);
+    }
+
+    75% {
+        transform: translate(0, 100px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* max-width, min-width=> mobi first  */
+/* 
+nếu ở màn hình điện thoại thì logo chữ sẽ hiển thị màu cam, còn nếu như ở tablet hoặc desktop thì vẫn giữ màu trắng 
+*/
+/* @media screen and (max-width: 576px) {
+    header .navbar-brand span {
+        color: orange !important;
+    } */
+
+/* 
+ở title ở phần carousel, nếu:
+ở moblie 576px => chữ màu đỏ
+ở vùng từ 576ox đến 992px => màu cam 
+còn lại desktop  => màu trắng 
+*/
+
+/* 
+nên đi từ lớn đến nhỏ nếu làm laptop trước 
+và ngược lại*/
+
+/* .cyber_carousel .carousel_text {
+        color: red;
+    }
+}
+
+@media screen and (min-width:577px) and (max-width: 992px) {
+    .cyber_carousel .carousel_text {
+        color: orange;
+    }
+}
+
+@media screen and (min-width: 993px) {
+    .cyber_carousel .carousel_text {
+        color: white;
+    }
+} */
+
+
+@media screen and (min-width:576px) {
+    .cyber_project .nav-item .active {
+        background-color: red;
+        border: red !important;
+    }
+}
